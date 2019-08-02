@@ -16,9 +16,8 @@ public protocol SVG {
 	/// as formatted HTML text.
 	/// - Parameters:
 	///   - stream: The stream to print the resulting SVG to.
-	///   - attributes: Attributes from `AttributedNode`s higher in the node
-	///                 hierarchy.
-	func renderAsHTML(into stream: HTMLOutputStream, attributes: [Attribute])
+	///   - attributes: Attributes from `AttributedNode`s higher in the node hierarchy.
 	func getTag() -> String?
+	func renderAsHTML(into stream: HTMLOutputStream, attributes: [Attribute])
 	
 }
