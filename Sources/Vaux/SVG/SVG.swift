@@ -19,7 +19,6 @@ public protocol SVG {
 	///   - attributes: Attributes from `AttributedNode`s higher in the node
 	///                 hierarchy.
 	func renderAsHTML(into stream: HTMLOutputStream, attributes: [Attribute])
-	
 	func getTag() -> String?
 	
 }
