@@ -7,24 +7,29 @@
 
 import Foundation
 
-public struct Filepath {
+public struct FilePath {
 	
 	public var name: String
 	public var path: String
+	
+	public init(name: String, path: String) {
+		self.name = name
+		self.path = path
+	}
 	
 }
 
 public class VauxFileHelper {
 	
 	/// Allows you to create a `.html` file with a given name and given path.
-	public class func createFile(_ file: Filepath) -> URL? {
+	public class func createFile(_ file: FilePath) -> URL? {
 		let manager = FileManager()
 		manager.createFile(atPath: "\(file.path)\(file.name).html", contents: nil, attributes: nil)
 		return URL(fileURLWithPath: "\(file.path)\(file.name).html")
 	}
 	
 	/// Deletes file with given name at given path.
-	public class func deleteFile(_ file: Filepath) throws {
+	public class func deleteFile(_ file: FilePath) throws {
 		let manager = FileManager()
 		do {
 			try manager.removeItem(atPath: file.path + file.name + ".html")
@@ -34,7 +39,7 @@ public class VauxFileHelper {
 	}
 	
 	/// Returns content from file as `String`, usually effective for testing.
-	public class func getRenderedContent(from file: Filepath) throws -> String {
+	public class func getRenderedContent(from file: FilePath) throws -> String {
 		let manager = FileManager()
 		let fullPath = file.path + file.name + ".html"
 		guard let data = manager.contents(atPath: fullPath) else {

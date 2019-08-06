@@ -776,9 +776,9 @@ public func script(code: String) -> HTML {
 
 /// Inserts a `<script src="src"></scrip>` element into the HTML document.
 /// - Parameter src: The localtion of the script to insert.
-public func script(filepath: Filepath) -> HTML {
+public func script(filePath: FilePath) -> HTML {
 	return HTMLNode(tag: "script", child: "")
-		.attr("src", "\(filepath.path)\(filepath.name)")
+		.attr("src", "\(filePath.path)\(filePath.name)")
 }
 
 /// Inserts a `<section>` document into the HTML document, and closes with `</section>` after the contents of the closure.

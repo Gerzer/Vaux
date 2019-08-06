@@ -16,7 +16,7 @@ public class Vaux {
 	public enum VauxOutput {
 		
 		case stdout
-		case file(filepath: Filepath)
+		case file(filepath: FilePath)
 		
 	}
 	
